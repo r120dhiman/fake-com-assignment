@@ -7,7 +7,7 @@ Quick run (dev):
 1. Install dependencies for both backend and frontend
 
 ```bash
-cd /Users/RohitDhiman/Desktop/Webdevelopment/Assignment/backend
+cd /backend
 npm install
 cd ../frontend
 npm install
@@ -17,11 +17,11 @@ npm install
 
 ```bash
 # In one terminal
-cd /Users/RohitDhiman/Desktop/Webdevelopment/Assignment/backend
+cd /backend
 npm run dev
 
 # In another terminal
-cd /Users/RohitDhiman/Desktop/Webdevelopment/Assignment/frontend
+cd /frontend
 npm run dev
 ```
 
