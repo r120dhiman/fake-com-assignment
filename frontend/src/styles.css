@@ -1,0 +1,94 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{--bg:#f5f7fb;--card:#fff;--accent:#2b8ae2}
+*{box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+.site-header{background:linear-gradient(90deg,#fff,#f7fbff);box-shadow:0 6px 18px rgba(15,30,50,0.06);padding:12px 20px}
+.site-header .brand{display:flex;align-items:center;gap:12px}
+.site-header h1{margin:0;font-size:18px}
+.container{max-width:1100px;margin:20px auto;padding:0 16px}
+.main-grid{display:grid;grid-template-columns:1fr 340px;gap:24px}
+.products .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(12,24,40,0.06);display:flex;flex-direction:column}
+.product-media{height:140px;border-radius:8px;background:linear-gradient(135deg,#eef6ff,#f7fbff);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:600;margin-bottom:12px}
+.card h3{margin:0 0 8px;font-size:16px}
+.price{color:#111;margin:0 0 12px;font-weight:700}
+.card .meta{color:#666;font-size:13px;margin-bottom:12px}
+.btn{background:transparent;border:0;padding:10px 14px;border-radius:10px;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.ghost{background:transparent;border:1px solid #e6eef9;color:var(--accent)}
+.btn.small{padding:6px 8px;font-size:13px}
+.cart{background:transparent;padding:12px}
+.cart-panel{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(12,24,40,0.06);position:sticky;top:20px}
+.cart-item{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px dashed #f0f3f7}
+.cart-item .info{max-width:220px}
+.muted{color:#777;font-size:13px}
+.cart-summary{display:flex;justify-content:space-between;align-items:center;padding-top:12px}
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.35);display:flex;align-items:center;justify-content:center}
+.modal{background:#fff;padding:18px;border-radius:12px;min-width:360px;max-width:92%;position:relative}
+.close{position:absolute;right:8px;top:8px;border:0;background:transparent;font-size:18px;cursor:pointer}
+.checkout-form{display:flex;flex-direction:column;gap:8px}
+.checkout-form label{display:flex;flex-direction:column;font-size:14px}
+.checkout-form input{padding:10px;border-radius:8px;border:1px solid #eee}
+.profile .history-list .card{margin-bottom:10px;padding:12px}
+
+.nav{display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+.nav-right{display:flex;gap:8px;align-items:center}
+.nav-greet{margin-left:8px;color:#444}
+
+.loading-overlay{position:absolute;inset:0;background:rgba(255,255,255,0.7);display:flex;align-items:center;justify-content:center;border-radius:8px}
+.spinner{width:36px;height:36px;border-radius:50%;border:4px solid #eee;border-top-color:var(--accent);animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.bump{animation: bump 420ms cubic-bezier(.34,.89,.03,1)}
+@keyframes bump{0%{transform:scale(1)}30%{transform:scale(1.08)}100%{transform:scale(1)}}
+
+.mini-toast{position:absolute;top:10px;right:10px;background:var(--accent);color:#fff;padding:6px 10px;border-radius:999px;font-size:13px;box-shadow:0 6px 18px rgba(12,24,40,0.08);opacity:0;transform:translateY(-6px);animation: toast-in 900ms forwards}
+@keyframes toast-in{0%{opacity:0;transform:translateY(-6px)}40%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-6px)}}
+
+.success-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;padding:12px}
+.check-svg{width:88px;height:88px}
+.check svg{stroke:#16a34a;stroke-width:6px;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.check .circle{stroke-dasharray: 260; stroke-dashoffset: 260; animation: draw 600ms ease-out forwards}
+.check .tick{stroke-dasharray: 100; stroke-dashoffset: 100; animation: draw 300ms 600ms ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+@media(max-width:900px){
+  .main-grid{grid-template-columns:1fr}
+  .product-media{height:120px}
+  .cart-panel{position:static}
+}
+
+.site-header{padding:16px 20px;background:linear-gradient(90deg,#fff,#f7fbff);box-shadow:0 1px 2px rgba(0,0,0,0.03)}
+.site-header h1{margin:0;font-size:18px}
+.main-grid{display:grid;grid-template-columns:1fr 320px;gap:20px;padding:20px;max-width:1100px;margin:0 auto}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 20px}
+.nav-right{display:flex;gap:8px;align-items:center}
+.nav-greet{margin-left:8px;color:#444}
+
+.loading-overlay{position:absolute;inset:0;background:rgba(255,255,255,0.7);display:flex;align-items:center;justify-content:center;border-radius:8px}
+.spinner{width:36px;height:36px;border-radius:50%;border:4px solid #ddd;border-top-color:var(--accent);animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.products .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.card{background:var(--card);border-radius:8px;padding:12px;box-shadow:0 2px 8px rgba(12,24,40,0.04)}
+.card h3{margin:0 0 8px;font-size:16px}
+.price{color:#333;margin:0 0 12px}
+.btn{background:transparent;border:1px solid #ccc;padding:8px 12px;border-radius:6px;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.small{padding:6px 8px;font-size:13px}
+.cart{background:var(--card);padding:12px;border-radius:8px;box-shadow:0 2px 8px rgba(12,24,40,0.04)}
+.cart-item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #eee}
+.muted{color:#666;font-size:13px}
+.cart-summary{display:flex;justify-content:space-between;align-items:center;padding-top:12px}
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.35);display:flex;align-items:center;justify-content:center}
+.modal{background:#fff;padding:18px;border-radius:8px;min-width:320px;max-width:90%;position:relative}
+.close{position:absolute;right:8px;top:8px;border:0;background:transparent;font-size:18px;cursor:pointer}
+.checkout-form{display:flex;flex-direction:column;gap:8px}
+.checkout-form label{display:flex;flex-direction:column;font-size:14px}
+.checkout-form input{padding:8px;border-radius:6px;border:1px solid #ddd}
+
+@media(max-width:900px){
+  .main-grid{grid-template-columns:1fr}
+}
